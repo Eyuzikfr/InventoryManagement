@@ -26,10 +26,14 @@ A simple **C++ console-based inventory system** that lets players pick, drop, eq
 
 3. Compile the program (example with g++):
    ```bash
-     g++ -std=c++17 InventoryManagement/InventoryManagement.cpp -o InventoryManagement
+     g++ -std=c++17 InventoryManagement.cpp -o InventoryManagement
    
 4. Run the Program
    ```bash
    ./InventoryManagement
+   ```
+   or
+   ```bash
+   InventoryManagement.exe
 
 P.S: For now, only compatible with Windows OS due to the usage of system("cls").
