@@ -25,4 +25,4 @@ A simple **C++ console-based inventory system** that lets players pick, drop, eq
    
 3. Run the Program
    ```bash
-  ./InventoryManagement
+   ./InventoryManagement
