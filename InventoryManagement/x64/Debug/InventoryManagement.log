@@ -1,0 +1,4 @@
+﻿  InventoryManagement.cpp
+C:\eyuziksFiles\Projects\CPPGD\InventoryManagement\InventoryManagement\InventoryManagement.cpp(64,35): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\eyuziksFiles\Projects\CPPGD\InventoryManagement\InventoryManagement\InventoryManagement.cpp(109,35): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  InventoryManagement.vcxproj -> C:\eyuziksFiles\Projects\CPPGD\InventoryManagement\x64\Debug\InventoryManagement.exe
