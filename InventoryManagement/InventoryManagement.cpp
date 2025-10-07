@@ -110,7 +110,7 @@ public:
 	int GetSize() { return slots.size(); }
 };
 
-static void ListAvailableItems(std::vector<std::unique_ptr<Item>> &availableItems) {
+static void ListAvailableItems(std::vector<std::shared_ptr<Item>> &availableItems) {
 	int i = 1;
 	std::cout << "\n-----Available Items-----" << std::endl;
 	for (auto& item : availableItems) {
@@ -136,15 +136,15 @@ void showTitle() {
 int main() {
 	Inventory inventory;	// player inventory
 	Hotbar hotbar(3);		// player hotbar
-	std::vector<std::unique_ptr<Item>> availableItems;	// items player can pick up
+	std::vector<std::shared_ptr<Item>> availableItems;	// items player can pick up
 	int playerChoice;		// holds player choices
 	bool isRunning = true;	// bool var to loop till player chooses to exit
 
 
 	// add three items that are available to be picked up
-	availableItems.push_back(std::make_unique<Item>("Sword", 50));
-	availableItems.push_back(std::make_unique<Item>("Heal Potion", 60));
-	availableItems.push_back(std::make_unique<Item>("Wooden Shield", 30));
+	availableItems.push_back(std::make_shared<Item>("Sword", 50));
+	availableItems.push_back(std::make_shared<Item>("Heal Potion", 60));
+	availableItems.push_back(std::make_shared<Item>("Wooden Shield", 30));
 
 	// main game loop
 	while (isRunning) {
@@ -205,7 +205,7 @@ int main() {
 			std::weak_ptr<Item> droppedItem = inventory.GetItem(dropItemIndex - 1);
 
 			if (auto droppedItemLock = droppedItem.lock()) {
-				availableItems.push_back(std::make_unique<Item>(droppedItemLock->GetName(), droppedItemLock->GetValue()));
+				availableItems.push_back(droppedItemLock);
 				inventory.RemoveItem(dropItemIndex - 1);
 			}
 			break;
